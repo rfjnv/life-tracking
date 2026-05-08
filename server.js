@@ -46,6 +46,19 @@ async function telegram(method, payload) {
   return response.json();
 }
 
+function webAppKeyboard() {
+  return {
+    inline_keyboard: [
+      [
+        {
+          text: "Open Life Game OS",
+          web_app: { url: WEBAPP_URL },
+        },
+      ],
+    ],
+  };
+}
+
 async function handleTelegramWebhook(req, res) {
   const rawBody = await readBody(req);
   const update = JSON.parse(rawBody || "{}");
@@ -55,28 +68,46 @@ async function handleTelegramWebhook(req, res) {
     return sendJson(res, 200, { ok: true });
   }
 
-  const text = message.text || "";
+  const text = (message.text || "").trim();
   const chatId = message.chat.id;
 
   if (text === "/start" || text === "/app") {
     await telegram("sendMessage", {
       chat_id: chatId,
-      text: "Life Game OS готов. Открой приложение и управляй целями, финансами, привычками и XP прямо внутри Telegram.",
-      reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: "Open Life Game OS",
-              web_app: { url: WEBAPP_URL },
-            },
-          ],
-        ],
-      },
+      text:
+        "Life Game OS готов.\n\n" +
+        "Открой приложение и управляй целями, финансами, привычками, аналитикой и XP прямо внутри Telegram.",
+      reply_markup: webAppKeyboard(),
+    });
+  } else if (text === "/status") {
+    await telegram("sendMessage", {
+      chat_id: chatId,
+      text:
+        "Сегодняшний статус:\n\n" +
+        "XP: 1,180\n" +
+        "Streak: 14 дней\n" +
+        "Progress Score: 82%\n" +
+        "Goals: 5 / 7\n" +
+        "Finance: +$8.5k cashflow\n\n" +
+        "Следующий level up: закрой ещё 2 цели.",
+      reply_markup: webAppKeyboard(),
+    });
+  } else if (text === "/help") {
+    await telegram("sendMessage", {
+      chat_id: chatId,
+      text:
+        "Команды Life Game OS:\n\n" +
+        "/app - открыть Mini App\n" +
+        "/status - показать прогресс\n" +
+        "/help - список команд\n\n" +
+        "Внутри приложения доступны Goals, Finance, Analytics, Calendar, AI Coach, Character и Achievements.",
+      reply_markup: webAppKeyboard(),
     });
   } else {
     await telegram("sendMessage", {
       chat_id: chatId,
-      text: "Нажми /app, чтобы открыть Life Game OS как Mini App.",
+      text: "Нажми /app, чтобы открыть Life Game OS как Mini App, или /status, чтобы увидеть краткий прогресс.",
+      reply_markup: webAppKeyboard(),
     });
   }
 
