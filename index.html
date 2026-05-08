@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Life Game OS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <body>
+    <aside class="rail" aria-label="Навигация Life Game OS">
+      <div class="brand"><span>LG</span><strong>Life Game OS</strong></div>
+      <nav class="rail-nav">
+        <button class="active" data-page="goals"><span data-icon="target"></span>Goals</button>
+        <button data-page="finance"><span data-icon="wallet"></span>Finance</button>
+        <button data-page="analytics"><span data-icon="chart"></span>Analytics</button>
+        <button data-page="calendar"><span data-icon="calendar"></span>Calendar</button>
+        <button data-page="coach"><span data-icon="spark"></span>AI Coach</button>
+        <button data-page="profile"><span data-icon="user"></span>Character</button>
+        <button data-page="achievements"><span data-icon="trophy"></span>Achievements</button>
+        <button data-page="onboarding"><span data-icon="rocket"></span>Onboarding</button>
+        <button data-page="settings"><span data-icon="settings"></span>Settings</button>
+      </nav>
+      <div class="rail-status">
+        <small>System health</small>
+        <strong>92%</strong>
+        <div class="progress"><span style="width: 92%"></span></div>
+      </div>
+    </aside>
+
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Premium Life OS</p>
+          <h1 id="page-title">Milestone Map</h1>
+        </div>
+        <button class="primary-action" type="button"><span data-icon="plus"></span>Create goal</button>
+      </header>
+
+      <nav class="quick-tabs" aria-label="Быстрое переключение разделов">
+        <button class="active" data-page="goals">Goals</button>
+        <button data-page="finance">Finance</button>
+        <button data-page="analytics">Analytics</button>
+        <button data-page="calendar">Calendar</button>
+        <button data-page="coach">AI Coach</button>
+        <button data-page="profile">Character</button>
+        <button data-page="achievements">Awards</button>
+        <button data-page="settings">Settings</button>
+      </nav>
+
+      <section class="command-strip" aria-label="Сегодняшнее состояние системы">
+        <article><small>Today XP</small><strong>1,180</strong><em class="good">+14%</em></article>
+        <article><small>Streak</small><strong>14d</strong><em class="good">active</em></article>
+        <article><small>Focus window</small><strong>09:00</strong><em>best</em></article>
+        <article><small>Next level</small><strong>72%</strong><em>2 goals left</em></article>
+      </section>
+
+      <section class="page active" id="goals" data-title="Milestone Map">
+        <div class="hero-grid">
+          <article class="main-goal">
+            <div>
+              <p class="eyebrow">Main Goal</p>
+              <h2>Build an elite life operating system</h2>
+              <p>Daily quests, weekly milestones, monthly objectives and yearly achievements connected into one character upgrade map.</p>
+            </div>
+            <div class="donut" style="--value: 74"><span>74%</span><small>+2,400 XP</small></div>
+          </article>
+          <article class="level-panel">
+            <span class="level-badge">Lv. 18</span>
+            <strong>Level up close</strong>
+            <small>Close 2 milestones to unlock Level 19 and a new rank badge.</small>
+            <div class="progress"><span style="width: 72%"></span></div>
+          </article>
+        </div>
+
+        <div class="milestone-grid">
+          <article class="milestone-card">
+            <div class="card-top"><span class="icon blue" data-icon="sun"></span><em>Active</em></div>
+            <h3>Day Goals</h3>
+            <p>5 / 7 completed · deadline 21:00</p>
+            <div class="subtasks"><span class="done">Deep work</span><span class="done">Hydration</span><span>Training</span></div>
+            <div class="progress"><span style="width: 71%"></span></div>
+            <strong>+540 XP</strong>
+          </article>
+          <article class="milestone-card">
+            <div class="card-top"><span class="icon violet" data-icon="calendar"></span><em>In progress</em></div>
+            <h3>Week Goals</h3>
+            <p>9 / 12 completed · deadline Sunday</p>
+            <div class="subtasks"><span class="done">Launch flow</span><span>Finance review</span><span>Learning sprint</span></div>
+            <div class="progress"><span style="width: 75%"></span></div>
+            <strong>+1,200 XP</strong>
+          </article>
+          <article class="milestone-card celebration">
+            <div class="card-top"><span class="icon pink" data-icon="target"></span><em>Milestone unlock</em></div>
+            <h3>Month Goals</h3>
+            <p>6 / 9 completed · deadline May 31</p>
+            <div class="subtasks"><span class="done">Beta dashboard</span><span>Reserve fund</span><span>Health protocol</span></div>
+            <div class="progress"><span style="width: 68%"></span></div>
+            <strong>Level up reward</strong>
+          </article>
+          <article class="milestone-card">
+            <div class="card-top"><span class="icon amber" data-icon="trophy"></span><em>Achievement</em></div>
+            <h3>Year Goals</h3>
+            <p>2 / 5 completed · long arc</p>
+            <div class="subtasks"><span>Independent operator</span><span>10k focus hours</span><span>Wealth system</span></div>
+            <div class="progress"><span style="width: 41%"></span></div>
+            <strong>+8,000 XP</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="finance" data-title="Finance Control Center">
+        <div class="summary-row">
+          <article><small>Income</small><strong>$18,420</strong><em class="good">+13% plan</em></article>
+          <article><small>Expenses</small><strong>$9,860</strong><em class="warn">82% budget</em></article>
+          <article><small>Savings</small><strong>$8,560</strong><em class="good">46% rate</em></article>
+          <article><small>Net worth</small><strong>$84,290</strong><em class="good">+12.4%</em></article>
+        </div>
+        <div class="dashboard-grid two">
+          <article class="panel wide">
+            <div class="section-head"><h2>Monthly overview</h2><span class="pill">Cashflow +$8.5k</span></div>
+            <div class="bar-chart">
+              <i style="height:52%"></i><b style="height:38%"></b><i style="height:64%"></i><b style="height:49%"></b><i style="height:72%"></i><b style="height:45%"></b><i style="height:88%"></i><b style="height:47%"></b><i style="height:92%"></i><b style="height:51%"></b>
+            </div>
+          </article>
+          <article class="panel">
+            <div class="section-head"><h2>Plan / Fact</h2><span class="pill">May</span></div>
+            <div class="stack-list">
+              <div><span>Income</span><em>113%</em><div class="progress"><span style="width:100%"></span></div></div>
+              <div><span>Expenses</span><em>82%</em><div class="progress"><span style="width:82%"></span></div></div>
+              <div><span>Investments</span><em>67%</em><div class="progress"><span style="width:67%"></span></div></div>
+            </div>
+          </article>
+          <article class="panel">
+            <div class="section-head"><h2>Income categories</h2></div>
+            <div class="pie income-pie"><span>Income</span></div>
+            <div class="table-lines"><p>Salary <b>$11.2k</b></p><p>Freelance <b>$4.1k</b></p><p>Investments <b>$2.0k</b></p></div>
+          </article>
+          <article class="panel">
+            <div class="section-head"><h2>Expenses / Debt</h2></div>
+            <div class="pie expense-pie"><span>Spend</span></div>
+            <div class="table-lines"><p>Housing <b>$3.1k</b></p><p>Growth <b>$1.4k</b></p><p>Debt <b>$620</b></p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="analytics" data-title="Life Analytics">
+        <div class="summary-row">
+          <article><small>Weekly progress</small><strong>78%</strong><em class="good">+9%</em></article>
+          <article><small>Monthly progress</small><strong>64%</strong><em class="good">+12%</em></article>
+          <article><small>Productivity</small><strong>8.7</strong><em class="good">high</em></article>
+          <article><small>Energy score</small><strong>7.4</strong><em class="warn">evening dip</em></article>
+        </div>
+        <div class="dashboard-grid two">
+          <article class="panel wide">
+            <div class="section-head"><h2>Life trajectory</h2><span class="pill">vs previous period +12%</span></div>
+            <div class="line-chart"><svg viewBox="0 0 500 160"><path d="M8 128 C70 90, 96 112, 150 78 S250 64, 310 42 S415 76, 492 24" /></svg></div>
+          </article>
+          <article class="panel">
+            <h2>Score matrix</h2>
+            <div class="stack-list">
+              <div><span>Focus</span><em>91%</em><div class="progress"><span style="width:91%"></span></div></div>
+              <div><span>Discipline</span><em>84%</em><div class="progress"><span style="width:84%"></span></div></div>
+              <div><span>Balance</span><em>69%</em><div class="progress"><span style="width:69%"></span></div></div>
+            </div>
+          </article>
+          <article class="panel"><h2>Habit completion</h2><div class="donut" style="--value:86"><span>86%</span><small>rate</small></div></article>
+          <article class="panel insight"><h2>AI insights</h2><p>Лучшее окно для deep work - утро. За последние 7 дней дисциплина выросла на 12%, но энергия падает после 18:00.</p></article>
+        </div>
+      </section>
+
+      <section class="page" id="calendar" data-title="Calendar OS">
+        <div class="filter-row"><button class="active">Work</button><button>Health</button><button>Finance</button><button>Personal</button></div>
+        <div class="dashboard-grid two">
+          <article class="panel wide">
+            <div class="section-head"><h2>May calendar</h2><span class="pill">Today highlighted</span></div>
+            <div class="calendar-grid">
+              <span></span><span></span><span class="work"></span><span class="health"></span><span class="today"></span><span class="finance"></span><span></span>
+              <span class="done"></span><span class="work"></span><span></span><span class="personal"></span><span class="done"></span><span></span><span class="health"></span>
+              <span></span><span class="finance"></span><span class="done"></span><span></span><span class="work"></span><span class="personal"></span><span></span>
+              <span class="done"></span><span></span><span class="health"></span><span class="finance"></span><span></span><span class="work"></span><span></span>
+            </div>
+          </article>
+          <article class="panel">
+            <h2>Today agenda</h2>
+            <div class="timeline"><p><b>09:00</b> Deep work</p><p><b>13:00</b> Finance check</p><p><b>19:30</b> Training</p></div>
+          </article>
+          <article class="panel wide"><h2>Weekly timeline</h2><div class="timeline-strip"><i></i><i></i><i class="active"></i><i></i><i></i></div></article>
+        </div>
+      </section>
+
+      <section class="page" id="coach" data-title="AI Coach">
+        <article class="coach-hero">
+          <span data-icon="spark"></span>
+          <div>
+            <p class="eyebrow">AI Summary</p>
+            <h2>Ты движешься стабильно, но вечерний фокус проседает.</h2>
+            <p>Твоя продуктивность падает после 18:00. Лучшее окно для deep work - утро. За последние 7 дней ты улучшил дисциплину на 12%.</p>
+          </div>
+        </article>
+        <div class="dashboard-grid two">
+          <article class="panel insight"><h2>Next best action</h2><p>Закрой тренировку до 20:30 и перенеси финансовый обзор на утро.</p></article>
+          <article class="panel insight warn-panel"><h2>Overload warning</h2><p>Сегодня слишком много high-priority задач. Убери один низкоценный пункт.</p></article>
+          <article class="panel"><h2>Productivity forecast</h2><div class="progress"><span style="width:76%"></span></div></article>
+          <article class="panel"><h2>Discipline forecast</h2><div class="progress"><span style="width:84%"></span></div></article>
+        </div>
+      </section>
+
+      <section class="page" id="profile" data-title="Character Profile">
+        <div class="character-layout">
+          <article class="character-card"><div class="avatar">18</div><h2>Focused Operator</h2><p>Rank: A-Class · streak 14 days</p><div class="progress"><span style="width:72%"></span></div></article>
+          <article class="panel stats-panel">
+            <h2>Life stats</h2>
+            <div class="stack-list">
+              <div><span>Discipline</span><em>84</em><div class="progress"><span style="width:84%"></span></div></div>
+              <div><span>Focus</span><em>91</em><div class="progress"><span style="width:91%"></span></div></div>
+              <div><span>Health</span><em>72</em><div class="progress"><span style="width:72%"></span></div></div>
+              <div><span>Wealth</span><em>78</em><div class="progress"><span style="width:78%"></span></div></div>
+              <div><span>Knowledge</span><em>81</em><div class="progress"><span style="width:81%"></span></div></div>
+              <div><span>Energy</span><em>69</em><div class="progress"><span style="width:69%"></span></div></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="achievements" data-title="Achievements">
+        <div class="achievement-grid">
+          <article class="achievement-card unlocked"><span data-icon="trophy"></span><h3>No Zero Days</h3><p>Unlocked · common</p></article>
+          <article class="achievement-card unlocked"><span data-icon="flame"></span><h3>7 Day Streak</h3><p>Unlocked · rare</p></article>
+          <article class="achievement-card"><span data-icon="target"></span><h3>30 Day Focus</h3><p>24 / 30 · epic</p></article>
+          <article class="achievement-card"><span data-icon="wallet"></span><h3>Money Builder</h3><p>68% · rare</p></article>
+          <article class="achievement-card"><span data-icon="sun"></span><h3>Early Riser</h3><p>Locked · common</p></article>
+          <article class="achievement-card"><span data-icon="zap"></span><h3>Deep Work Master</h3><p>81% · legendary</p></article>
+        </div>
+      </section>
+
+      <section class="page" id="onboarding" data-title="Onboarding">
+        <div class="onboarding-flow">
+          <article><h2>Преврати жизнь в игру</h2><p>Получай XP за полезные действия и видь прогресс каждый день.</p></article>
+          <article><h2>Отслеживай привычки и цели</h2><p>Собери свои daily quests, streak и milestones.</p></article>
+          <article><h2>Управляй финансами и продуктивностью</h2><p>Видь систему целиком: деньги, фокус, энергию и рост.</p></article>
+          <article><h2>Начни свою систему</h2><div class="choice-row"><button>Productivity</button><button>Health</button><button>Money</button><button>Discipline</button><button>Focus</button></div></article>
+        </div>
+      </section>
+
+      <section class="page" id="settings" data-title="Settings">
+        <div class="settings-list">
+          <article><strong>Theme</strong><span>Dark premium</span><input type="checkbox" checked /></article>
+          <article><strong>Profile settings</strong><span>Name, title, avatar</span></article>
+          <article><strong>Notifications</strong><span>Daily quests, streak alerts</span><input type="checkbox" checked /></article>
+          <article><strong>Goal preferences</strong><span>XP, categories, priority rules</span></article>
+          <article><strong>Integrations</strong><span>Calendar, finance, health</span></article>
+          <article><strong>Language</strong><span>Russian / English</span></article>
+          <article><strong>Privacy</strong><span>Local-first data controls</span></article>
+          <article><strong>Export data</strong><span>CSV, JSON, PDF</span></article>
+          <article><strong>Account management</strong><span>Plan, billing, delete account</span></article>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Mobile navigation">
+      <button class="active" data-page="goals"><span data-icon="target"></span><small>Goals</small></button>
+      <button data-page="finance"><span data-icon="wallet"></span><small>Money</small></button>
+      <button data-page="analytics"><span data-icon="chart"></span><small>Stats</small></button>
+      <button data-page="coach"><span data-icon="spark"></span><small>Coach</small></button>
+    </nav>
+
+    <div class="toast" role="status" aria-live="polite">Goal created · milestone XP preview unlocked</div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
